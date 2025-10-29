@@ -1,0 +1,26 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "app.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "app.py"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/templates/$1"
+        }
+    ],
+    "env": {
+        "FIREBASE_PROJECT_ID": "@firebase_project_id",
+        "TELEGRAM_BOT_TOKEN": "@telegram_bot_token",
+        "BOT_SECRET_KEY": "@bot_secret_key",
+        "VERCEL_TOKEN": "@vercel_token",
+        "FIREBASE_WEB_API_KEY": "@firebase_web_api_key"
+    }
+}
