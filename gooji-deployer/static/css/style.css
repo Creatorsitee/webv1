@@ -1,0 +1,60 @@
+body { font-family: 'Inter', sans-serif; }
+    /* Animations for popup */
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @keyframes fadeOutScale {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+    }
+    .animate-fade-in-scale {
+      animation: fadeInScale 0.3s ease-out forwards;
+    }
+    .animate-fade-out-scale {
+      animation: fadeOutScale 0.3s ease-out forwards;
+    }
+    /* Animation for scroll-triggered elements */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Prevent scrolling on body when popup is open */
+    body.popup-open {
+      overflow: hidden;
+      height: 100vh;
+    }
+    /* Custom radio button styling */
+    .deploy-option {
+      border: 2px solid #e5e7eb;
+      border-radius: 0.75rem;
+      transition: all 0.3s ease;
+    }
+    .deploy-option:hover {
+      border-color: #818cf8;
+    }
+    .deploy-option.selected {
+      border-color: #4f46e5;
+      background-color: #f8faff;
+    }
+    .deploy-option input[type="radio"]:checked + .option-content {
+      border-color: #4f46e5;
+      background-color: #f8faff;
+    }
